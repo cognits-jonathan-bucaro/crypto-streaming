@@ -18,8 +18,8 @@ public class RandomWalkStrategy {
 
     public BigDecimal nextPrice(CryptoCurrency currency) {
         BigDecimal currentPrice = currentPrices.getOrDefault(
-            currency.symbol(),
-            BigDecimal.valueOf(currency.initialPrice())
+                currency.symbol(),
+                BigDecimal.valueOf(currency.initialPrice())
         );
 
         BigDecimal newPrice;

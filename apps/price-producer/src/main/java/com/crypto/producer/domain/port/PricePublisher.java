@@ -6,5 +6,6 @@ import java.util.concurrent.CompletableFuture;
 
 public interface PricePublisher {
     CompletableFuture<String> publish(PriceEvent message);
+
     boolean isHealthy();
 }

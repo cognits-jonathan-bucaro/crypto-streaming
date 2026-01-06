@@ -18,12 +18,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class RedisStreamPublisher implements PricePublisher {
     private final StatefulRedisConnection<String, String> connection;
     private final String streamName;
-
-    @Value("${crypto.redis.stream.max-length:10000}")
-    private long maxLength;
-
     private final AtomicLong publishCount = new AtomicLong(0);
     private final AtomicLong errorCount = new AtomicLong(0);
+    @Value("${crypto.redis.stream.max-length:10000}")
+    private long maxLength;
 
     @Override
     public CompletableFuture<String> publish(PriceEvent message) {

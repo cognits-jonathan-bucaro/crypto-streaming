@@ -6,6 +6,8 @@ import java.util.function.Consumer;
 
 public interface PriceSubscriber {
     void subscribe(Consumer<PriceEvent> handler);
+
     void acknowledge(String messageId);
+
     void shutdown();
 }

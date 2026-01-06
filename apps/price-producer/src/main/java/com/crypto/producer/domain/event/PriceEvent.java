@@ -33,6 +33,17 @@ public record PriceEvent(
         );
     }
 
+    public static PriceEvent fromFieldMap(Map<String, String> fields) {
+        PriceUpdate priceUpdate = PriceUpdate.fromFieldMap(fields);
+
+        return new PriceEvent(
+                UUID.fromString(fields.get("eventId")),
+                fields.get("eventType"),
+                Instant.parse(fields.get("timestamp")),
+                priceUpdate
+        );
+    }
+
     public Map<String, String> toFieldMap() {
         return Map.of(
                 "eventId", eventId.toString(),
@@ -44,17 +55,6 @@ public record PriceEvent(
                 "change", payload.change().toString(),
                 "changePercent", payload.changePercent().toString(),
                 "trend", payload.trend().getValue()
-        );
-    }
-
-    public static PriceEvent fromFieldMap(Map<String, String> fields) {
-        PriceUpdate priceUpdate = PriceUpdate.fromFieldMap(fields);
-
-        return new PriceEvent(
-                UUID.fromString(fields.get("eventId")),
-                fields.get("eventType"),
-                Instant.parse(fields.get("timestamp")),
-                priceUpdate
         );
     }
 }
