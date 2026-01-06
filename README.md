@@ -167,8 +167,8 @@ C4Deployment
 
 | Component | Technology |
 |-----------|------------|
-| Price Producer | Java 21, Spring Boot 3, Lettuce (Redis client) |
-| WebSocket Bridge | Java 21, Spring Boot 3, Spring WebSocket, Lettuce |
+| Price Producer | Java 17, Spring Boot 3, Lettuce (Redis client) |
+| WebSocket Bridge | Java 17, Spring Boot 3, Spring WebSocket, Lettuce |
 | Dashboard | Vanilla JavaScript, HTML5, CSS3, Nginx |
 | Message Broker | Redis 8 with Streams |
 | Containerization | Docker, Docker Compose |
@@ -178,7 +178,7 @@ C4Deployment
 ### Prerequisites
 
 - Docker and Docker Compose installed on your system
-- (Optional) Java 21 and Maven for local development
+- (Optional) Java 17 and Maven for local development
 
 ### Running the Platform
 
