@@ -19,6 +19,8 @@ A Coding Challenge real-time cryptocurrency price streaming platform built with 
 
 The Crypto Streaming Platform is a demonstration project that showcases real-time data streaming using modern technologies. It simulates cryptocurrency price updates and delivers them to web clients through a distributed architecture using Redis Streams as the message backbone.
 
+![Crypto Streaming dashboard](image.png)
+
 ## Architecture
 
 ### System Context
