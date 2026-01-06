@@ -1,0 +1,35 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: websocket-bridge
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+crypto:
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    stream:
+      name: crypto:prices
+      consumer-group: price-consumers
+      consumer-id: ${HOSTNAME:consumer-1}
+      block-timeout: 5s
+      batch-size: 100
+  websocket:
+    endpoint: /ws/prices
+    allowed-origins: "*"
+    max-sessions: 1000
+
+logging:
+  level:
+    com.crypto: INFO
