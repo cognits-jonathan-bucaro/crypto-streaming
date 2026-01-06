@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: price-producer
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+crypto:
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    stream:
+      name: crypto:prices
+      max-length: 10000
+  producer:
+    interval-ms: 1000
+
+logging:
+  level:
+    com.crypto: INFO
