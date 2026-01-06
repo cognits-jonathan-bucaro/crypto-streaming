@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Crypto Price Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <header class="bg-white shadow-sm p-4 mb-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">Crypto Price Dashboard</h1>
+                <p class="text-sm text-gray-500">Real-time cryptocurrency prices</p>
+            </div>
+            <div id="connection-status"></div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <div id="price-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+    </main>
+
+    <footer class="container mx-auto px-6 py-8 mt-12 text-center text-sm text-gray-500">
+        <p>Data updates in real-time via WebSocket</p>
+    </footer>
+
+    <script type="module" src="src/js/app.js?v=3"></script>
+</body>
+</html>
