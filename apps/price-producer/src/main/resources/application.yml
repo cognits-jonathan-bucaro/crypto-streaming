@@ -10,9 +10,9 @@ management:
     web:
       exposure:
         include: health,metrics,prometheus
-  metrics:
-    export:
-      prometheus:
+  prometheus:
+    metrics:
+      export:
         enabled: true
 
 crypto:
